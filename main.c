@@ -1,6 +1,6 @@
 /*=====================================================
-  Nome: AndrÈ Guimar„es Jorge RA: 22.118.115-9
-  Nome: Jo„o Victor da Silva Couto RA: 22.118.022-7
+  Nome: Andr√© Guimar√£es Jorge RA: 22.118.115-9
+  Nome: Jo√£o Victor da Silva Couto RA: 22.118.022-7
 =======================================================*/
 #include <stdio.h>
 #include <stdlib.h>
@@ -31,7 +31,7 @@ void ler_bin(Agenda *a){
   int cad;
   arq = fopen("Agenda_bin.txt","rb");
   if(arq == NULL){
-    printf("Erro na abertura do aequivo!\n");
+    printf("Erro na abertura do arquivo!\n");
     exit(1);
   }
   fread(&cad,sizeof(cad),1,arq);
@@ -62,7 +62,7 @@ void cadastraPessoa(Agenda *a){
     fgets(a->p[a->user_cad].tipo_s,sizeof(a->p[a->user_cad].tipo_s), stdin);
     printf("Operadora: ");
     fgets(a->p[a->user_cad].operadora,sizeof(a->p[a->user_cad].operadora), stdin);
-    printf("Religi„o: ");
+    printf("Religi√£o: ");
     fgets(a->p[a->user_cad].religiao,sizeof(a->p[a->user_cad].religiao), stdin);
     printf("Cidade: ");
     fgets(a->p[a->user_cad].cidade,sizeof(a->p[a->user_cad].cidade), stdin);
@@ -114,7 +114,7 @@ int busca_e_imprime(Agenda *a){
     }
   }
   if(busca == 0){
-    printf("Paciente n„o encontrado!\n\n");
+    printf("Paciente n√£o encontrado!\n\n");
     return -1; 
   }  
 }
@@ -127,7 +127,7 @@ void deleta_paciente(Agenda *a){
   id = buscaRG(a,rg);
   
   if(id == -1){
-    printf("Paciente n„o encontrado!\n");
+    printf("Paciente n√£o encontrado!\n");
   }
   else{
     printf("======= Paciente =========\n\n");
@@ -147,13 +147,13 @@ void menualtera(Agenda *a){
   busca = busca_e_imprime(a);
   
   if(a->user_cad == 0){
-    printf("N„o existem usu·rios cadastrados!\n\n");
+    printf("N√£o existem usu√°rios cadastrados!\n\n");
   }
   if(busca != -1){
-    printf("===== opÁıes de alteraÁ„o =======\n\n");
-    printf("1 - Alterar nome\n2 - Alterar telefone\n3 - Alterar email\n4 - Alterar RG\n5 - Alterar CPF\n6 - Alterar tipo Sanguineo\n7 - Alterar operadora\n8 - Alterar religi„o\n9 - Alterar cidade\n10 - Alterar estado\n\n");
+    printf("===== op√ß√µes de altera√ß√£o =======\n\n");
+    printf("1 - Alterar nome\n2 - Alterar telefone\n3 - Alterar email\n4 - Alterar RG\n5 - Alterar CPF\n6 - Alterar tipo Sanguineo\n7 - Alterar operadora\n8 - Alterar religi√£o\n9 - Alterar cidade\n10 - Alterar estado\n\n");
     
-    printf("Digite uma opÁ„o: ");
+    printf("Digite uma op√ß√£o: ");
     scanf("%d",&opc);
     setbuf(stdin,NULL);
     printf("Digite o RG do paciente que deseja alterar: ");
@@ -162,7 +162,7 @@ void menualtera(Agenda *a){
     id = buscaRG(a,rg);
 
     if(id == -1){
-      printf("Paciente n„o encontrado!\n");
+      printf("Paciente n√£o encontrado!\n");
       sleep(1);
       return;
     }
@@ -233,12 +233,12 @@ void menualtera(Agenda *a){
       }
       else if(opc == 8){
         char religiao[10];
-        printf("Digite a nova religi„o: ");
+        printf("Digite a nova religi√£o: ");
         fgets(religiao,sizeof(religiao),stdin);
         setbuf(stdin, NULL);
         strcpy(a->p[id].religiao,religiao);
         puts("");
-        printf("Religi„o alterada com sucesso!\n");
+        printf("Religi√£o alterada com sucesso!\n");
       }
       else if(opc == 9){
         char cidade[20];
@@ -271,7 +271,7 @@ void imprimeAgenda(Agenda *a){
     }
   }
   else{
-    printf("N„o h· pacientes cadastrados!\n\n");
+    printf("N√£o h√° pacientes cadastrados!\n\n");
   }
 }
 
@@ -337,7 +337,7 @@ void menu_txt(Agenda *a){
   printf("1 - Gravar agenda em modo texto\n");
   printf("2 - Ler agenda em modo texto\n");
   printf("3 - Voltar ao menu principal\n");
-  printf("Digite uma opÁ„o: ");
+  printf("Digite uma op√ß√£o: ");
   scanf("%d",&opc);
   setbuf(stdin, NULL);
 
@@ -362,8 +362,8 @@ void menuPrincipal(Agenda a){
   printf("==============================\n");
   printf("      Agenda de Pacientes\n");
   printf("==============================\n\n");
-  printf("Digite a opÁ„o desejada por favor:\n\n1 - Cadastrar paciente.\n2 - Listar todos pacientes.\n3 - Remover paciente.\n4 - Alterar paciente.\n5 - Buscar paciente.\n6 - OpÁıes AvanÁadas.\n7 - Sair.\n\n");
-  printf("Digite uma opÁ„o: ");
+  printf("Digite a op√ß√£o desejada por favor:\n\n1 - Cadastrar paciente.\n2 - Listar todos pacientes.\n3 - Remover paciente.\n4 - Alterar paciente.\n5 - Buscar paciente.\n6 - Op√ß√µes Avan√ßadas.\n7 - Sair.\n\n");
+  printf("Digite uma op√ß√£o: ");
   scanf("%d", &menu);
   setbuf(stdin,NULL);
 
@@ -385,7 +385,7 @@ void menuPrincipal(Agenda a){
       menuPrincipal(a);
     break;
     case 4:
-      printf("====== Menu de AlteraÁ„o =======\n\n");
+      printf("====== Menu de Altera√ß√£o =======\n\n");
       menualtera(&a);
       sleep(1);
       menuPrincipal(a);
@@ -405,7 +405,7 @@ void menuPrincipal(Agenda a){
       salvar_bin(&a);
     break;
     default:
-      printf("\nPor favor digite uma opÁ„o v·lida!\n\n");
+      printf("\nPor favor digite uma op√ß√£o v√°lida!\n\n");
       sleep(2);
       menuPrincipal(a);
     break;
