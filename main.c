@@ -31,7 +31,7 @@ void ler_bin(Agenda *a){
   int cad;
   arq = fopen("Agenda_bin.txt","rb");
   if(arq == NULL){
-    printf("Erro na abertura do arquivo!\n");
+    printf("Erro na abertura do arquivo! \n");
     exit(1);
   }
   fread(&cad,sizeof(cad),1,arq);
